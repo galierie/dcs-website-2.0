@@ -28,15 +28,15 @@
             <NavItem href="/research" to="Research" dropdown={true}>
                 <NavItem href="/research/overview" to="Overview" />
                 <NavItem href="/research/labs" to="Laboratories" dropdown={true} position="left-36 top-0">
-                    <NavItem href="/research/labs/ndsl" to="Networks and Distributed Systems Laboratory" />
-                    <NavItem href="/research/labs/cvmil" to="Computer Vision and Machine Intelligence Laboratory" />
-                    <NavItem href="/research/labs/s3" to="Service Science and Software Engineering Laboratory" />
                     <NavItem href="/research/labs/acl" to="Algorithms and Complexity Laboratory" />
-                    <NavItem href="/research/labs/lcl" to="Logic and smth here Laboratory" />
-                    <NavItem href="/research/labs/wsl" to="Web Science Laboratory" />
                     <NavItem href="/research/labs/csl" to="Computer Security Laboratory" />
-                    <NavItem href="/research/labs/smsl" to="System Modeling and Simulation Laboratory" />
+                    <NavItem href="/research/labs/cvmil" to="Computer Vision and Machine Intelligence Laboratory" />
+                    <NavItem href="/research/labs/lcl" to="Logic and Computability Laboratory" />
+                    <NavItem href="/research/labs/ndsl" to="Networks and Distributed Systems Laboratory" />
                     <NavItem href="/research/labs/scl" to="Scientific Computing Laboratory" />
+                    <NavItem href="/research/labs/s3" to="Service Science and Software Engineering Laboratory" />
+                    <NavItem href="/research/labs/smsl" to="System Modeling and Simulation Laboratory" />
+                    <NavItem href="/research/labs/wsl" to="Web Science Laboratory" />
                 </NavItem>
                 <NavItem href="/research/outputs" to="Featured Outputs" />
             </NavItem>
