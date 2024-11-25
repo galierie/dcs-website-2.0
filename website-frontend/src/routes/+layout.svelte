@@ -10,6 +10,8 @@
 	import javascript from 'highlight.js/lib/languages/javascript';
 	import typescript from 'highlight.js/lib/languages/typescript';
 
+	import NavBar from './NavBar.svelte';
+
 	hljs.registerLanguage('xml', xml); // for HTML
 	hljs.registerLanguage('css', css);
 	hljs.registerLanguage('javascript', javascript);
@@ -17,8 +19,10 @@
 	storeHighlightJs.set(hljs);
 </script>
 
-<head>
-	<title>UPD DCS</title>
-</head>
+<header>
+	<NavBar />
+</header>
 
-<slot />
+<main>
+	<slot />
+</main>
