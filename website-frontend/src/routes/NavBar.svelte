@@ -18,7 +18,7 @@
             </NavItem>
             <NavItem href="/research" to="Research">
                 <NavItem href="/research/overview" to="Overview" />
-                <NavItem href="/research/labs" to="Laboratories">
+                <NavItem href="/research/labs" to="Laboratories" position="left-40 top-0">
                     <NavItem href="/research/labs/ndsl" to="Networks and Distributed Systems Laboratory" />
                     <NavItem href="/research/labs/cvmil" to="Computer Vision and Machine Intelligence Laboratory" />
                     <NavItem href="/research/labs/s3" to="Service Science and Software Engineering Laboratory" />

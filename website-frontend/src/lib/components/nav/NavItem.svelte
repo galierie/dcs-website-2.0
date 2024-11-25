@@ -1,6 +1,6 @@
 <script lang="ts">
     import { slide } from "svelte/transition";
-    export let href: string, to: string;
+    export let href: string, to: string, position: string = '';
 
     let show = false;
 </script>
@@ -13,7 +13,7 @@
     <a {href}>{to}</a>
     {#if show}
         <ul
-            class="absolute w-40" 
+            class="absolute w-40 {position}" 
             transition:slide
         >
             <slot />
