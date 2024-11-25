@@ -26,8 +26,8 @@
             </button>
         {/if}
         <a {href} class="
-            px-3 py-1 flex md:items-center md:justify-start md:text-left
-            justify-end w-fit text-right
+            px-3 py-1 flex md:items-center md:justify-start md:text-left md:border-0
+            justify-end w-fit text-right border-r-2
         ">{to}</a>
     </div>
     {#if show && dropdown}
