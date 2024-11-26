@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { slide } from 'svelte/transition';
-
 	export let href: string,
 		to: string,
 		dropdown: boolean = false,
@@ -11,7 +9,7 @@
 </script>
 
 <li
-	class="w-full relative md:rounded-sm transition-colors duration-300 ease-in-out hover:bg-accent {style}"
+	class="w-full relative md:rounded-sm hover:bg-accent {style}"
 	on:mouseenter={() => {
 		show = true;
 	}}
@@ -54,7 +52,6 @@
                 w-full pr-4
                 {position}
             "
-			transition:slide
 		>
 			<slot />
 		</ul>
