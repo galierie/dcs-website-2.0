@@ -5,13 +5,13 @@
 		to: string,
 		dropdown: boolean = false,
 		position: string = '',
-		style: string = '';
+		custom: string = '';
 
 	let show = false;
 </script>
 
 <li
-	class="w-full relative md:rounded-sm transition-colors duration-300 ease-in-out hover:bg-accent {style}"
+	class="w-full relative md:rounded-sm transition-colors duration-300 ease-in-out hover:bg-accent {custom}"
 	on:mouseenter={() => {
 		show = true;
 	}}

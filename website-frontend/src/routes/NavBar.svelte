@@ -61,7 +61,7 @@
 				<NavItem
 					href="/linkages/partnerships"
 					to="Partnerships"
-					style="md:flex md:justify-end md:p-0 lg:block lg:justify-start"
+					custom="md:flex md:justify-end md:p-0 lg:block lg:justify-start"
 				/>
 			</NavItem>
 		</ul>
