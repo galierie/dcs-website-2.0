@@ -1,6 +1,9 @@
 import { dev } from '$app/environment';
+
+import { isDirectusError } from '@directus/errors';
 import pino from 'pino';
 import pretty, { type PrettyStream } from 'pino-pretty';
+import { getDotPath, isValiError, ValiError } from 'valibot';
 
 let stream: PrettyStream | undefined;
 
@@ -28,7 +31,25 @@ export async function handle({ event, resolve }) {
 }
 
 export async function handleError({ error }) {
-	logger.error({
-		error
-	}, 'error occurred with code')
+	if (isValiError(error)) {
+		const valibotErrorPaths = error.issues
+			.map(issue => getDotPath(issue))
+			.filter(path => path !== null);
+		logger.error({
+			valibotErrorPaths,
+			cause: error.cause,
+			message: error.message,
+		}, `valibot returned an error: ${error.name}`)
+	} else if (isDirectusError(error)) {
+		logger.error({
+			error: error.message,
+			code: error.code,
+			metadata: error.meta,
+			response: error.response
+		}, 'directus returned an error')
+	} else {
+		logger.error({
+			error
+		}, 'error occurred with code')
+	}
 }
