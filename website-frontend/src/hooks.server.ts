@@ -4,7 +4,7 @@ import { isDirectusError } from '@directus/errors';
 import { FetchError } from 'ofetch';
 import pino from 'pino';
 import pretty, { type PrettyStream } from 'pino-pretty';
-import { getDotPath, isValiError, ValiError } from 'valibot';
+import { getDotPath, isValiError } from 'valibot';
 
 let stream: PrettyStream | undefined;
 
@@ -50,6 +50,16 @@ export async function handleError({ error }) {
 			},
 			`valibot returned an error: ${error.name}`
 		);
+	} else if (error instanceof FetchError) {
+		const oFetchError: FetchError = error;
+		logger.error(
+			{
+				status: oFetchError.status,
+				message: oFetchError.message,
+				response: oFetchError.response
+			},
+			'ofetch returned an error'
+		);
 	} else if (isDirectusError(error)) {
 		logger.error(
 			{
@@ -59,16 +69,6 @@ export async function handleError({ error }) {
 				response: error.response
 			},
 			'directus returned an error'
-		);
-	} else if ((error as any) instanceof FetchError) {
-		const oFetchError: FetchError = error;
-		logger.error(
-			{
-				status: oFetchError.status,
-				message: oFetchError.message,
-				response: oFetchError.response
-			},
-			'ofetch returned an error'
 		);
 	} else {
 		logger.error(
