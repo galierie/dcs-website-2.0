@@ -1,6 +1,7 @@
 import { dev } from '$app/environment';
 
 import { isDirectusError } from '@directus/errors';
+import { FetchError } from 'ofetch';
 import pino from 'pino';
 import pretty, { type PrettyStream } from 'pino-pretty';
 import { getDotPath, isValiError, ValiError } from 'valibot';
@@ -47,6 +48,13 @@ export async function handleError({ error }) {
 			metadata: error.meta,
 			response: error.response
 		}, 'directus returned an error')
+	} else if ((error as any) instanceof FetchError) {
+		const oFetchError: FetchError = error;
+		logger.error({
+			status: oFetchError.status,
+			message: oFetchError.message,
+			response: oFetchError.response,
+		}, 'ofetch returned an error')
 	} else {
 		logger.error({
 			error
