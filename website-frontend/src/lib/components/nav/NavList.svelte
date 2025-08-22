@@ -71,12 +71,12 @@
 </NavItem>
 <NavItem href="/research" to="Research" dropdown={true}>
 	<NavItem href="/research" to="Overview" />
-	<NavItem href="/research/publications" to="Publications" />
 	<NavItem href="/research/labs" to="Laboratories" dropdown={true} position="top-0 left-full">
 		{#each laboratories as laboratory, i}
 			<NavItem href="/research/labs/{laboratory.slug}" to={laboratory.name ?? `Laboratory ${i}`} />
 		{/each}
 	</NavItem>
+	<NavItem href="/research/publications" to="Publications" />
 </NavItem>
 <NavItem href="/students" to="Students" dropdown={true}>
 	<NavItem href="/students" to="Overview" />
