@@ -20,7 +20,8 @@ const Author = partial(
 		last_name: string('publication author has no last name'),
 		link: union([
 			object({
-				key: string('publication author link has no key')
+				key: string('publication author link has no link key'),
+				collection: string('publication author has no link collection')
 			}),
 			string('publication author link is missing')
 		])

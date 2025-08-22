@@ -77,7 +77,7 @@ export async function load({ params, fetch }) {
 							item.authors
 								? item.authors.map(async (author) => {
 										if (typeof author.link === 'undefined') return author;
-										if (typeof author.link === 'object') {
+										if (typeof author.link === 'object' && author.link.collection === 'people') {
 											const person = await directus.request(readItem('people', author.link.key));
 											return {
 												...author,
