@@ -5,6 +5,7 @@ import { error } from '@sveltejs/kit';
 import { parse } from 'valibot';
 import { Laboratories, Laboratory } from '$lib/models/laboratories';
 import { Publications } from '$lib/models/publications';
+import pino from 'pino';
 
 export async function load({ params, fetch }) {
 	const directus = getDirectusInstance(fetch);
@@ -78,7 +79,7 @@ export async function load({ params, fetch }) {
 								? item.authors.map(async (author) => {
 										if (typeof author.link === 'undefined') return author;
 										if (typeof author.link === 'object' && author.link.collection === 'people') {
-											const person = await directus.request(readItem('people', author.link.key));
+											const person = await directus.request(readItem('people', author.link.key)).catch(() => ({username: ''}));
 											return {
 												...author,
 												link: `/people/${person.username}`
