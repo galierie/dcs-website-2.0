@@ -70,7 +70,6 @@
 </NavItemMobile>
 <NavItemMobile href="/research" to="Research" dropdown={true}>
 	<NavItemMobile href="/research" to="Overview" />
-	<NavItemMobile href="/research/publications" to="Publications" />
 	<NavItemMobile href="/research/labs" to="Laboratories" dropdown={true}>
 		{#each laboratories as laboratory, i}
 			<NavItemMobile
@@ -79,6 +78,7 @@
 			/>
 		{/each}
 	</NavItemMobile>
+	<NavItemMobile href="/research/publications" to="Publications" />
 </NavItemMobile>
 <NavItemMobile href="/students" to="Students" dropdown={true}>
 	<NavItemMobile href="/students" to="Overview" />
