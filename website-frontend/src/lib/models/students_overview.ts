@@ -3,8 +3,8 @@ import { nullable, object, partial, pipe, string, type InferOutput } from 'valib
 
 export const StudentsOverview = partial(
 	object({
-		flexible_content: pipe(string(), cleanHtml),
-		background_image: nullable(string())
+		flexible_content: pipe(string('student overview has no flexible content'), cleanHtml),
+		background_image: nullable(string('student overview has no background image'))
 	})
 );
 

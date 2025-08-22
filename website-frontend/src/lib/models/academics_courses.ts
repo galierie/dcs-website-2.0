@@ -17,11 +17,11 @@ import { AcademicsCoursesCorequisites } from './junctions/academics_courses_core
 
 export const AcademicsCourse = partial(
 	object({
-		course_code: string(),
-		course_title: string(),
-		course_units: pipe(number(), integer()),
-		course_description: nullable(string()),
-		course_syllabus: nullable(string()),
+		course_code: string('academic course has no code'),
+		course_title: string('academic course has no title'),
+		course_units: pipe(number('academic course has invalid units'), integer()),
+		course_description: nullable(string('academic course has no description')),
+		course_syllabus: nullable(string('academic course has no syllabus')),
 		course_prerequisites: nullable(
 			union([array(number()), lazy(() => AcademicsCoursesPrerequisites)])
 		),

@@ -13,7 +13,7 @@ import { PublicationsRelated } from './junctions/publications_related';
 
 export const PublicationsTag = partial(
 	object({
-		name: string(),
+		name: string('publication tag has no name'),
 		related_publications: nullable(union([array(number()), lazy(() => PublicationsRelated)]))
 	})
 );

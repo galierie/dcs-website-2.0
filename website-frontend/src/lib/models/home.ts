@@ -15,7 +15,7 @@ import { RecentEvents } from './junctions/recent_events';
 
 export const Home = partial(
 	object({
-		id: string(),
+		id: string('home has no id'),
 		featured_news: nullable(union([array(number()), lazy(() => FeaturedNews)])),
 		recent_news: nullable(union([array(number()), lazy(() => RecentNews)])),
 		recent_events: nullable(union([array(number()), lazy(() => RecentEvents)]))

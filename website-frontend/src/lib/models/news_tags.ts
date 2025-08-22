@@ -13,7 +13,7 @@ import { NewsRelated } from './junctions/news_related';
 
 export const NewsTag = partial(
 	object({
-		name: string(),
+		name: string('news tag has no name'),
 		related_news: nullable(union([array(number()), lazy(() => NewsRelated)]))
 	})
 );

@@ -2,10 +2,10 @@ import { array, integer, number, object, partial, pipe, string, type InferOutput
 
 export const EventsArea = partial(
 	object({
-		id: string(),
-		name: string(),
-		area: string(),
-		order: pipe(number(), integer())
+		id: string('event area has no id'),
+		name: string('event area has no name'),
+		area: string('event area has no area'),
+		order: pipe(number('event area has invalid order'), integer())
 	})
 );
 

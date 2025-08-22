@@ -17,13 +17,13 @@ import { AcademicsProgramsCourses } from './junctions/academics_programs_courses
 
 export const AcademicsProgram = partial(
 	object({
-		title: string(),
-		slug: string(),
+		title: string('academic program has no title'),
+		slug: string('academic program has no slug'),
 		category: nullable(union([string(), lazy(() => AcademicsCategory)])),
-		flexible_content: pipe(string(), cleanHtml),
+		flexible_content: pipe(string('academic program has invalid content'), cleanHtml),
 		curriculum_table: nullable(union([array(number()), lazy(() => AcademicsProgramsCourses)])),
-		curriculum_last_updated: pipe(string(), isoDate()),
-		background_image: nullable(string())
+		curriculum_last_updated: pipe(string('academic program last updated has invalid date'), isoDate()),
+		background_image: nullable(string('academic program has no background image'))
 	})
 );
 

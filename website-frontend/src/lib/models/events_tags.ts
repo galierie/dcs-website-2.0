@@ -4,9 +4,9 @@ import { EventsTagsCategory } from './events_tags_categories';
 
 export const EventsTag = partial(
 	object({
-		name: string(),
-		tag_category: nullable(union([string(), lazy(() => EventsTagsCategory)])),
-		related_events: nullable(union([array(string()), lazy(() => EventsRelated)]))
+		name: string('event tag has no name'),
+		tag_category: nullable(union([string('event tag has no category'), lazy(() => EventsTagsCategory)])),
+		related_events: nullable(union([array(string('event tag has no related events')), lazy(() => EventsRelated)]))
 	})
 );
 

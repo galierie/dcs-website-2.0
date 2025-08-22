@@ -3,10 +3,10 @@ import { array, nullable, object, partial, pipe, string, type InferOutput } from
 
 export const AboutPage = partial(
 	object({
-		title: string(),
-		slug: string(),
-		flexible_content: pipe(string(), cleanHtml),
-		background_image: nullable(string())
+		title: string('about subpage has no title'),
+		slug: string('about subpage has no slug'),
+		flexible_content: pipe(string('about subpage has invalid content'), cleanHtml),
+		background_image: nullable(string('about subpage has no background image'))
 	})
 );
 

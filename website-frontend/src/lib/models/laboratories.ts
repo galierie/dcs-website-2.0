@@ -15,14 +15,14 @@ import { EventsLaboratories } from './junctions/events_laboratories';
 
 export const Laboratory = partial(
 	object({
-		id: string(),
-		name: string(),
-		slug: string(),
-		brief_description: nullable(string()),
-		description: nullable(string()),
-		logo: nullable(string()),
-		location: nullable(string()),
-		contact_email: nullable(string()),
+		id: string('laboratory has no id'),
+		name: string('laboratory has no name'),
+		slug: string('laboratory has no slug'),
+		brief_description: nullable(string('laboratory has no brief description')),
+		description: nullable(string('laboratory has no description')),
+		logo: nullable(string('laboratory has no logo')),
+		location: nullable(string('laboratory has no location')),
+		contact_email: nullable(string('laboratory has no contact email')),
 		background_images: nullable(union([array(number()), lazy(() => LaboratoriesDirectusFiles)])),
 		affiliates: nullable(union([array(string()), lazy(() => PeopleLaboratories)])),
 		events: nullable(union([array(string()), lazy(() => EventsLaboratories)]))
