@@ -5,7 +5,8 @@ import { type Schema } from './models/schema';
 import type { Fetch } from './fetch';
 import { ofetch } from 'ofetch';
 
-function getDirectusInstance(fetch: Fetch | null) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function getDirectusInstance(_fetch: Fetch | null) {
 	const directus = createDirectus<Schema>(PUBLIC_APIURL, { globals: { fetch: ofetch } })
 		.with(staticToken(STATIC_ACCESS_TOKEN))
 		.with(rest());
