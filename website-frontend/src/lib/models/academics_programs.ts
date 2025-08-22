@@ -22,7 +22,10 @@ export const AcademicsProgram = partial(
 		category: nullable(union([string(), lazy(() => AcademicsCategory)])),
 		flexible_content: pipe(string('academic program has invalid content'), cleanHtml),
 		curriculum_table: nullable(union([array(number()), lazy(() => AcademicsProgramsCourses)])),
-		curriculum_last_updated: pipe(string('academic program last updated has invalid date'), isoDate()),
+		curriculum_last_updated: pipe(
+			string('academic program last updated has invalid date'),
+			isoDate()
+		),
 		background_image: nullable(string('academic program has no background image'))
 	})
 );

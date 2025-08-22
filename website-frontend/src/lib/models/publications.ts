@@ -43,7 +43,9 @@ export const Publication = partial(
 		abstract: string('publication has no abstract'),
 		laboratory: union([string('publication has no laboratory'), lazy(() => Laboratory)]),
 		hero_image: string('publication has no hero image'),
-		publication_tags: nullable(union([array(number('publication has no tags')), lazy(() => PublicationsRelated)])),
+		publication_tags: nullable(
+			union([array(number('publication has no tags')), lazy(() => PublicationsRelated)])
+		),
 		access_links: nullable(array(AccessLink))
 	})
 );

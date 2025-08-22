@@ -25,7 +25,10 @@ export const NewsItem = partial(
 			lazy(() => required(DirectusUser, ['first_name', 'last_name']))
 		]),
 		user_updated: nullable(
-			union([string('news item has no user updated'), lazy(() => required(DirectusUser, ['first_name', 'last_name']))])
+			union([
+				string('news item has no user updated'),
+				lazy(() => required(DirectusUser, ['first_name', 'last_name']))
+			])
 		),
 		date_created: pipe(string('news item has no date created'), isoTimestamp()),
 		date_updated: nullable(pipe(string('news item has no date updated'), isoTimestamp())),

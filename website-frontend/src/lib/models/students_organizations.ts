@@ -27,7 +27,10 @@ export const StudentsOrganization = partial(
 		location: nullable(string('student organization has no location')),
 		flexible_content: pipe(string('student organization has no flexible content'), cleanHtmlDark),
 		background_images: nullable(
-			union([array(number('student organization has no background images')), lazy(() => StudentsOrganizationsDirectusFiles)])
+			union([
+				array(number('student organization has no background images')),
+				lazy(() => StudentsOrganizationsDirectusFiles)
+			])
 		)
 	})
 );
