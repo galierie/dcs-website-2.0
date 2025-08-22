@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@directus/errors':
+        specifier: ^2.0.3
+        version: 2.0.3
       '@directus/sdk':
         specifier: ^20.0.2
         version: 20.0.2
@@ -164,9 +167,15 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
+  '@directus/errors@2.0.3':
+    resolution: {integrity: sha512-g/p5JSdRGefTv5vhSjef1rq6gHNcI3WW8ggt0plFIixv9SK7P38dHi8nuBeA6FwwA+oKIYlhvtRK//e/39ZjCg==}
+
   '@directus/sdk@20.0.2':
     resolution: {integrity: sha512-eZu61BdWN1R4h6A/K3jIiZfK8WMg3z5JLDPrdGPA8ZWpXjXlR0qtPOBJ0dZFJn25C2Huu0ND6UMrFlhDgkIwyw==}
     engines: {node: '>=22'}
+
+  '@directus/storage@12.0.1':
+    resolution: {integrity: sha512-qpoGAEtONS6ssRQ1MT/FcoGgejmghMFZAec0O0x7iw2I2vuG59uw1YG2aoTDlkJVar/T75tOXfti/IMRZ4qIIQ==}
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -2017,7 +2026,14 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.30
 
+  '@directus/errors@2.0.3':
+    dependencies:
+      '@directus/storage': 12.0.1
+      ms: 2.1.3
+
   '@directus/sdk@20.0.2': {}
+
+  '@directus/storage@12.0.1': {}
 
   '@esbuild/aix-ppc64@0.21.5':
     optional: true

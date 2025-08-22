@@ -53,6 +53,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@directus/errors": "^2.0.3",
 		"@directus/sdk": "^20.0.2",
 		"@sveltejs/adapter-node": "^5.3.1",
 		"dotenv": "^16.6.1",
