@@ -3,7 +3,7 @@ import { object, partial, pipe, string, type InferOutput } from 'valibot';
 
 export const Linkages = partial(
 	object({
-		flexible_content: pipe(string(), cleanHtml)
+		flexible_content: pipe(string('linkages has invalid content'), cleanHtml)
 	})
 );
 

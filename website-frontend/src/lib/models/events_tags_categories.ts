@@ -2,8 +2,8 @@ import { array, nullable, object, partial, string, type InferOutput } from 'vali
 
 export const EventsTagsCategory = partial(
 	object({
-		name: string(),
-		description: nullable(string())
+		name: string('event tag category has no name'),
+		description: nullable(string('event tag category has no description'))
 	})
 );
 

@@ -3,10 +3,11 @@ import { STATIC_ACCESS_TOKEN } from '$env/static/private';
 import { PUBLIC_APIURL } from '$env/static/public';
 import { type Schema } from './models/schema';
 import type { Fetch } from './fetch';
+import { ofetch } from 'ofetch';
 
-function getDirectusInstance(fetch: Fetch | null) {
-	const options = fetch ? { globals: { fetch } } : {};
-	const directus = createDirectus<Schema>(PUBLIC_APIURL, options)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function getDirectusInstance(_fetch: Fetch | null) {
+	const directus = createDirectus<Schema>(PUBLIC_APIURL, { globals: { fetch: ofetch } })
 		.with(staticToken(STATIC_ACCESS_TOKEN))
 		.with(rest());
 	return directus;

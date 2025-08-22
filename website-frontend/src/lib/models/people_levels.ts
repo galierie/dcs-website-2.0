@@ -13,7 +13,7 @@ import { PeopleRelated } from './junctions/people_related';
 
 export const Level = partial(
 	object({
-		name: string(),
+		name: string('people level has no name'),
 		related_people: nullable(union([array(number()), lazy(() => PeopleRelated)]))
 	})
 );

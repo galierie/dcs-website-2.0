@@ -3,11 +3,11 @@ import { array, nullable, object, partial, pipe, string, type InferOutput } from
 
 export const AcademicsCategory = partial(
 	object({
-		name: string(),
-		slug: string(),
-		description: nullable(string()),
-		flexible_content: pipe(string(), cleanHtml),
-		background_image: nullable(string())
+		name: string('academic category has no name'),
+		slug: string('academic category has no slug'),
+		description: nullable(string('academic category has no description')),
+		flexible_content: pipe(string('academic category has invalid content'), cleanHtml),
+		background_image: nullable(string('academic category has no background image'))
 	})
 );
 

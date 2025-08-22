@@ -16,18 +16,21 @@ import { StudentsOrganizationsDirectusFiles } from './junctions/students_organiz
 
 export const StudentsOrganization = partial(
 	object({
-		name: string(),
-		slug: string(),
-		description: nullable(string()),
-		mission: nullable(string()),
-		email: nullable(string()),
-		founding_date: nullable(pipe(string(), isoDate())),
-		logo: nullable(string()),
-		website: nullable(string()),
-		location: nullable(string()),
-		flexible_content: pipe(string(), cleanHtmlDark),
+		name: string('student organization has no name'),
+		slug: string('student organization has no slug'),
+		description: nullable(string('student organization has no description')),
+		mission: nullable(string('student organization has no mission')),
+		email: nullable(string('student organization has no email')),
+		founding_date: nullable(pipe(string('student organization has no founding date'), isoDate())),
+		logo: nullable(string('student organization has no logo')),
+		website: nullable(string('student organization has no website')),
+		location: nullable(string('student organization has no location')),
+		flexible_content: pipe(string('student organization has no flexible content'), cleanHtmlDark),
 		background_images: nullable(
-			union([array(number()), lazy(() => StudentsOrganizationsDirectusFiles)])
+			union([
+				array(number('student organization has no background images')),
+				lazy(() => StudentsOrganizationsDirectusFiles)
+			])
 		)
 	})
 );

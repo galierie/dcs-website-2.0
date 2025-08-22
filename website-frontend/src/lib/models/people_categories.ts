@@ -3,9 +3,9 @@ import { array, nullable, object, partial, pipe, string, type InferOutput } from
 
 export const PeopleCategory = partial(
 	object({
-		title: string(),
-		flexible_content: nullable(pipe(string(), cleanHtml)),
-		background_image: nullable(string())
+		title: string('people category has no title'),
+		flexible_content: nullable(pipe(string('people category has no content'), cleanHtml)),
+		background_image: nullable(string('people category has no background image'))
 	})
 );
 

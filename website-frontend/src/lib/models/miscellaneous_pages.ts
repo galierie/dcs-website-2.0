@@ -3,11 +3,11 @@ import { array, boolean, nullable, object, partial, pipe, string, type InferOutp
 
 export const MiscellaneousPage = partial(
 	object({
-		title: string(),
-		slug: string(),
-		is_on_nav: boolean(),
-		flexible_content: pipe(string(), cleanHtml),
-		background_image: nullable(string())
+		title: string('miscellaneous page has no title'),
+		slug: string('miscellaneous page has no slug'),
+		is_on_nav: boolean('miscellaneous page has no nav status'),
+		flexible_content: pipe(string('miscellaneous page has invalid content'), cleanHtml),
+		background_image: nullable(string('miscellaneous page has no background image'))
 	})
 );
 

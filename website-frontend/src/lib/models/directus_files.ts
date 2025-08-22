@@ -2,7 +2,7 @@ import { array, object, partial, string, type InferOutput } from 'valibot';
 
 export const DirectusFile = partial(
 	object({
-		id: string()
+		id: string('directus file has no id')
 	})
 );
 
